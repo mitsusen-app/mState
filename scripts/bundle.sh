@@ -7,7 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 VERSION=0.1.0
-BUNDLE_ID=io.github.winepaster.mstate
+BUNDLE_ID=io.github.mitsusen-app.mstate
 MIN_MACOS=14.0
 
 for arch in arm64 x86_64; do
