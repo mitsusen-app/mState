@@ -79,3 +79,7 @@ Samples for 6 seconds, writes `menubar.png`, `panel-light.png`, and `panel-dark.
 
 `MSTATE_WINDOW=1` shows the panel in a regular window instead, to measure its cost while open
 (e.g. with `top -pid`). Target: about 1–2% CPU with the panel open or closed.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
