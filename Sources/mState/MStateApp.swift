@@ -1,7 +1,6 @@
 import AppKit
 import SwiftUI
 
-@main
 struct MStateApp: App {
     @NSApplicationDelegateAdaptor private var appDelegate: AppDelegate
     // Not @State: SwiftUI's property wrappers are macros in this SDK, and the Command Line

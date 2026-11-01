@@ -32,6 +32,10 @@ final class MetricsStore {
     private(set) var uploadHistory = History(capacity: historyLength)
     private(set) var systemPowerHistory = History(capacity: historyLength)
 
+    var agentAccess = AgentAccess.isEnabled {
+        didSet { AgentAccess.isEnabled = agentAccess }
+    }
+
     let clusters: [CoreCluster]
 
     @ObservationIgnored private let cpuSampler = CPUSampler()

@@ -43,6 +43,9 @@ struct PanelView: View {
 
     private var footer: some View {
         HStack {
+            Toggle("Agent access", isOn: Binding(get: { store.agentAccess }, set: { store.agentAccess = $0 }))
+                .toggleStyle(StatusToggleStyle())
+                .help("Lets AI agents read these metrics through mState's MCP server.")
             Spacer()
             Button("Quit") { NSApplication.shared.terminate(nil) }
                 .keyboardShortcut("q")
@@ -270,6 +273,24 @@ private struct BatteryCard: View {
 }
 
 // MARK: - Building blocks
+
+/// A status dot instead of the system switch, which ImageRenderer can't draw in snapshots.
+private struct StatusToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button { configuration.isOn.toggle() } label: {
+            HStack(spacing: 5) {
+                Circle()
+                    .fill(configuration.isOn ? Color.green : Color.primary.opacity(0.2))
+                    .frame(width: 6, height: 6)
+                configuration.label
+                Text(configuration.isOn ? "On" : "Off").foregroundStyle(.tertiary)
+            }
+            .font(.system(size: 11))
+            .foregroundStyle(.secondary)
+        }
+        .buttonStyle(.plain)
+    }
+}
 
 private struct Card<Content: View>: View {
     @ViewBuilder let content: Content
