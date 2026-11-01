@@ -114,9 +114,10 @@ Agent access 只控制 MCP 伺服器，並不是安全邊界：以你的帳號�
 | Mac | 組建 | 實機測試 |
 |---|---|---|
 | M5 Max | universal | 有 |
-| M1、M2、M3、M4 | universal | 沒有。感測器鍵值取自 [Stats](https://github.com/exelban/stats) 專案 |
+| M3 Ultra | universal | 有 |
+| Intel | universal | 有。GPU 和溫度走 Intel 專用路徑 |
+| M1、M2、M4、其他 M3 機型 | universal | 沒有。感測器鍵值取自 [Stats](https://github.com/exelban/stats) 專案 |
 | M6 | universal | 沒有。先用 M5 的鍵值，再掃描感測器 |
-| Intel | universal | 沒有。CPU、記憶體、網路和電池用同一套程式；GPU 和溫度走 Intel 專用路徑 |
 
 如果你的 Mac 讀數看起來不對，歡迎開 issue 並附上 `swift run sensor-probe` 的輸出。
 

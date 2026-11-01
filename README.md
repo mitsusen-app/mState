@@ -114,9 +114,10 @@ Agent access only controls the MCP server. It isn't a security boundary: any pro
 | Mac | Build | Tested on hardware |
 |---|---|---|
 | M5 Max | universal | Yes |
-| M1, M2, M3, M4 | universal | No. Sensor keys come from the [Stats](https://github.com/exelban/stats) project |
+| M3 Ultra | universal | Yes |
+| Intel | universal | Yes. GPU and temperature use Intel paths |
+| M1, M2, M4, other M3 models | universal | No. Sensor keys come from the [Stats](https://github.com/exelban/stats) project |
 | M6 | universal | No. Uses M5 keys, then scans for sensors |
-| Intel | universal | No. CPU, memory, network, and battery use the same code; GPU and temperature use Intel paths |
 
 If a reading looks wrong on your Mac, please open an issue with the output of `swift run sensor-probe`.
 
